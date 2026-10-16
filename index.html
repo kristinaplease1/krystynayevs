@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Weekends Flowers — Квіти Дніпро</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#ffffff;
+    color:#111;
+}
+
+h1,h2,h3,.logo{
+    font-family:Georgia, "Times New Roman", serif;
+}
+
+/* HEADER */
+
+header{
+    background:white;
+    border-bottom:1px solid #eee;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    padding:20px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    letter-spacing:6px;
+    text-align:center;
+    line-height:1;
+}
+
+.logo span{
+    display:block;
+    font-family:Arial,sans-serif;
+    font-size:9px;
+    letter-spacing:7px;
+    margin-top:7px;
+}
+
+.menu{
+    display:flex;
+    gap:28px;
+}
+
+.menu a{
+    color:#111;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.menu a:hover{
+    opacity:.5;
+}
+
+.instagram-top{
+    color:#111;
+    text-decoration:none;
+    font-size:14px;
+}
+
+
+/* HERO */
+
+.hero{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    min-height:520px;
+}
+
+.hero-text{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:70px 55px;
+}
+
+.hero-small{
+    font-size:12px;
+    letter-spacing:4px;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:62px;
+    line-height:.95;
+    font-weight:400;
+    margin-bottom:22px;
+}
+
+.hero-text p{
+    font-family:Georgia,serif;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.black-btn{
+    display:inline-block;
+    width:max-content;
+    background:#111;
+    color:white;
+    text-decoration:none;
+    padding:15px 28px;
+    border-radius:30px;
+    font-size:14px;
+    transition:.3s;
+}
+
+.black-btn:hover{
+    transform:translateY(-2px);
+    background:#333;
+}
+
+.hero-image{
+    min-height:520px;
+    background-image:url("images/hero.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+
+/* GENERAL */
+
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 25px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title h2{
+    font-size:42px;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.title p{
+    color:#777;
+    font-size:14px;
+}
+
+
+/* CATEGORIES */
+
+.categories{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:45px;
+}
+
+.category{
+    border:1px solid #ccc;
+    background:white;
+    padding:11px 24px;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+.category:hover,
+.category.active{
+    background:#111;
+    color:white;
+}
+
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px 25px;
+}
+
+.product img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:5px;
+    display:block;
+}
+
+.product h3{
+    font-size:21px;
+    font-weight:400;
+    margin-top:16px;
+    margin-bottom:7px;
+}
+
+.description{
+    color:#777;
+    font-size:13px;
+    line-height:1.5;
+    min-height:38px;
+}
+
+.price{
+    font-size:16px;
+    margin:12px 0 16px;
+}
+
+.order{
+    display:inline-block;
+    border:1px solid #111;
+    color:#111;
+    text-decoration:none;
+    padding:11px 20px;
+    border-radius:30px;
+    font-size:13px;
+    transition:.3s;
+}
+
+.order:hover{
+    background:#111;
+    color:white;
+}
+
+
+/* ABOUT */
+
+.about-section{
+    background:#faf9f7;
+}
+
+.about{
+    max-width:1050px;
+    margin:auto;
+    text-align:center;
+    padding:75px 25px;
+}
+
+.about h2{
+    font-size:38px;
+    font-weight:400;
+    margin-bottom:20px;
+}
+
+.about-main{
+    max-width:750px;
+    margin:0 auto 50px;
+    color:#555;
+    line-height:1.8;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+}
+
+.feature{
+    padding:15px 35px;
+    border-right:1px solid #ddd;
+}
+
+.feature:last-child{
+    border-right:none;
+}
+
+.feature-icon{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.feature h3{
+    font-size:18px;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:#777;
+    font-size:13px;
+    line-height:1.6;
+}
+
+
+/* CONTACTS */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.8fr 1fr 1.2fr;
+    gap:35px;
+    align-items:stretch;
+}
+
+.instagram-card{
+    background:#f8f0ef;
+    padding:40px;
+    border-radius:12px;
+}
+
+.instagram-card h2{
+    font-size:28px;
+    font-weight:400;
+    margin-bottom:15px;
+}
+
+.instagram-card p{
+    color:#666;
+    line-height:1.6;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.outline-btn{
+    display:inline-block;
+    color:#111;
+    border:1px solid #111;
+    padding:12px 20px;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:13px;
+}
+
+.outline-btn:hover{
+    background:#111;
+    color:white;
+}
+
+.contact-info{
+    padding:15px 10px;
+}
+
+.contact-info h2{
+    font-size:30px;
+    font-weight:400;
+    margin-bottom:8px;
+}
+
+.contact-sub{
+    color:#777;
+    font-size:13px;
+    margin-bottom:30px;
+}
+
+.contact-item{
+    margin-bottom:22px;
+}
+
+.contact-item strong{
+    display:block;
+    margin-bottom:5px;
+    font-size:14px;
+}
+
+.contact-item p,
+.contact-item a{
+    color:#555;
+    text-decoration:none;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.contact-item a:hover{
+    color:#000;
+    text-decoration:underline;
+}
+
+
+/* MAP */
+
+.map-box{
+    min-height:330px;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.map-box iframe{
+    width:100%;
+    height:100%;
+    min-height:330px;
+    border:0;
+}
+
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid #eee;
+    padding:35px 25px;
+}
+
+.footer-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer-logo{
+    font-family:Georgia,serif;
+    letter-spacing:4px;
+}
+
+footer p{
+    color:#999;
+    font-size:12px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .menu{
+        display:none;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    .hero-text{
+        padding:70px 25px;
+        text-align:center;
+        align-items:center;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero-image{
+        min-height:450px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .product img{
+        height:420px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .feature{
+        border-right:none;
+        border-bottom:1px solid #ddd;
+        padding:30px;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .map-box{
+        height:400px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="nav">
+
+<div class="menu">
+<a href="#catalog">Букети</a>
+<a href="#about">Про нас</a>
+<a href="#contacts">Контакти</a>
+</div>
+
+<div class="logo">
+WEEKENDS
+<span>FLOWERS</span>
+</div>
+
+<a
+class="instagram-top"
+href="https://www.instagram.com/weekends.flowers/"
+target="_blank">
+Instagram
+</a>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+<div class="hero-text">
+
+<div class="hero-small">
+КВІТИ • ЕМОЦІЇ • WEEKENDS
+</div>
+
+<h1>
+WEEKENDS<br>
+FLOWERS
+</h1>
+
+<p>
+Квіти, які говорять замість вас.
+</p>
+
+<a href="#catalog" class="black-btn">
+Обрати букет →
+</a>
+
+</div>
+
+<div class="hero-image"></div>
+
+</div>
+
+
+<!-- CATALOG -->
+
+<section id="catalog">
+
+<div class="categories">
+
+<button class="category active">Всі</button>
+<button class="category">Букети</button>
+<button class="category">Троянди</button>
+<button class="category">Авторські</button>
+<button class="category">Подарунки</button>
+
+</div>
+
+<div class="title">
+
+<h2>Наші букети</h2>
+
+<p>
+Обирайте композицію для особливого моменту
+</p>
+
+</div>
+
+
+<div class="products">
+
+
+<!-- 1 -->
+
+<div class="product">
+
+<img src="images/bouquet1.jpg" alt="Pink Mood">
+
+<h3>Pink Mood</h3>
+
+<div class="description">
+Ніжний букет у рожевих відтінках
+</div>
+
+<div class="price">
+від 1 500 ₴
+</div>
+
+<a
+class="order"
+href="https://www.instagram.com/weekends.flowers/"
+target="_blank">
+Замовити →
+</a>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="product">
+
+<img src="images/bouquet2.jpg" alt="White Love">
+
+<h3>White Love</h3>
+
+<div class="description">
+Елегантна композиція у світлих тонах
+</div>
+
+<div class="price">
+від 1 800 ₴
+</div>
+
+<a
+class="order"
+href="https://www.instagram.com/weekends.flowers/"
+target="_blank">
+Замовити →
+</a>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="product">
+
+<img src="images/bouquet3.jpg" alt="Rose Classic">
+
+<h3>Rose Classic</h3>
+
+<div class="description">
+Класичні троянди для особливого подарунка
+</div>
+
+<div class="price">
+від 2 000 ₴
+</div>
+
+<a
+class="order"
+href="https://www.instagram.com/weekends.flowers/"
+target="_blank">
+Замовити →
+</a>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="product">
+
+<img src="images/bouquet4.jpg" alt="Weekend Bouquet">
+
+<h3>Weekend Bouquet</h3>
+
+<div class="description">
+Авторський букет від флориста
+</div>
+
+<div class="price">
+від 1 700 ₴
+</div>
+
+<a
+class="order"
+href="https://www.instagram.com/weekends.flowers/"
+target="_blank">
+Замовити →
+</a>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="product">
+
+<img src="images/bouquet5.jpg" alt="Romantic">
+
+<h3>Romantic</h3>
+
+<div class="description">
+Квіткова композиція для романтичного подарунка
+</div>
+
+<div class="price">
+від 1 900 ₴
+</div>
+
+<a
+class="order"
+href="https://www.instagram.com/weekends.flowers/"
+target="_blank">
+Замовити →
+</a>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="product">
+
+<img src="images/bouquet6.jpg" alt="Luxury">
+
+<h3>Luxury</h3>
+
+<div class="description">
+Великий букет для особливого приводу
+</div>
+
+<div class="price">
+від 2 500 ₴
+</div>
+
+<a
+class="order"
+href="https://www.instagram.com/weekends.flowers/"
+target="_blank">
+Замовити →
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<div class="about-section" id="about">
+
+<div class="about">
+
+<h2>Про нас</h2>
+
+<p class="about-main">
+Weekends Flowers — квітковий магазин у Дніпрі,
+де кожен букет створюється для того, щоб подарувати емоції.
+Ми допоможемо обрати композицію для дня народження,
+побачення, важливої події або просто без приводу.
+</p>
+
+
+<div class="features">
+
+<div class="feature">
+
+<div class="feature-icon">❀</div>
+
+<h3>Свіжі квіти</h3>
+
+<p>
+Підбираємо квіти для красивих
+та свіжих композицій.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">🚚</div>
+
+<h3>Доставка</h3>
+
+<p>
+Доставка квітів по Дніпру.
+Уточнюйте деталі при замовленні.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">♡</div>
+
+<h3>Індивідуальне замовлення</h3>
+
+<p>
+Створимо композицію відповідно
+до ваших побажань.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CONTACTS -->
+
+<section id="contacts">
+
+<div class="contact-grid">
+
+
+<!-- INSTAGRAM -->
+
+<div class="instagram-card">
+
+<h2>
+Більше квітів —<br>
+в Instagram
+</h2>
+
+<p>
+Дивіться актуальні букети,
+новинки та наші роботи.
+</p>
+
+<a
+class="outline-btn"
+href="https://www.instagram.com/weekends.flowers/"
+target="_blank">
+
+@weekends.flowers →
+
+</a>
+
+</div>
+
+
+<!-- INFO -->
+
+<div class="contact-info">
+
+<h2>Контакти</h2>
+
+<div class="contact-sub">
+Будемо раді допомогти вам з вибором
+</div>
+
+
+<div class="contact-item">
+
+<strong>📍 Адреса</strong>
+
+<a
+href="https://www.google.com/maps/search/?api=1&query=Володимира+Вернадського+8+Дніпро"
+target="_blank">
+
+вул. Володимира Вернадського, 8<br>
+Дніпро
+
+</a>
+
+</div>
+
+
+<div class="contact-item">
+
+<strong>◷ Графік</strong>
+
+<p>
+Щодня, 08:00 — 21:00
+</p>
+
+</div>
+
+
+<div class="contact-item">
+
+<strong>☎ Телефон</strong>
+
+<a href="tel:+380953031133">
++380 95 303 1133
+</a>
+
+</div>
+
+</div>
+
+
+<!-- GOOGLE MAP -->
+
+<div class="map-box">
+
+<iframe
+src="https://www.google.com/maps?q=Володимира%20Вернадського%208%20Дніпро&output=embed"
+loading="lazy"
+allowfullscreen>
+</iframe>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-inner">
+
+<div class="footer-logo">
+WEEKENDS FLOWERS
+</div>
+
+<p>
+Квіти для ваших особливих моментів ♥
+</p>
+
+<a
+href="https://www.instagram.com/weekends.flowers/"
+target="_blank"
+style="color:#111;text-decoration:none;">
+Instagram
+</a>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
